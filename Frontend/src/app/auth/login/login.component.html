@@ -1,0 +1,37 @@
+<!-- ---------------------------------------- -->
+
+<div class="example-card">
+  <h3 class="text-center mb-4">LOGIN</h3>
+  <form>
+    <mat-form-field>
+      <mat-icon matPrefix>email</mat-icon>
+      <input
+        autofocus
+        type="email"
+        matInput
+        placeholder="Email *"
+        formControlName="email"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-icon matPrefix>lock_outline</mat-icon>
+      <input
+        type="password"
+        autocomplete="false"
+        matInput
+        placeholder="Password *"
+        formControlName="password"
+      />
+    </mat-form-field>
+
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        class="w-full"
+      > 
+        Submit
+      </button>
+  </form>
+</div>
