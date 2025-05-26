@@ -1,20 +1,15 @@
 
 <header>
   <mat-toolbar>
-    <a mat-icon-button color="primary" routerLink ="/" routerLinkActive="active" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+    <a class="logo" mat-icon-button color="primary" routerLink ="/" routerLinkActive="active" aria-label="Example icon-button with menu icon">
+      <img src="img/logo.jpg" alt="MEAN" />
     </a>
     <a mat-button color="primary" routerLink ="/about" routerLinkActive="active" >About</a>
     <a mat-button color="primary" routerLink ="/contact" routerLinkActive="active" >Contact</a>
     <span class="example-spacer"></span>
-    <a mat-button color="primary" routerLink ="/login" routerLinkActive="active" >LogIn</a>
-    <a mat-button color="primary" routerLink ="/register" routerLinkActive="active" >Register</a>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
+    <a mat-button color="primary" routerLink ="/login" routerLinkActive="active" ><mat-icon>login</mat-icon>
+      LogIn</a>
+    <a mat-button color="primary" routerLink ="/register" routerLinkActive="active" ><mat-icon>person_add</mat-icon> Register</a>
   </mat-toolbar>
 </header>
 
