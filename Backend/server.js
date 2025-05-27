@@ -8,7 +8,7 @@ const cardRoutes = require('./src/routes/cardRoutes');
 
 const app = express();
 const corsOptions = {
-  origin: ['http://localhost:4200', 'https://srv-server.onrender.com']
+  origin: ['http://localhost:4200', 'https://srv-server.onrender.com', 'https://srv-mean.onrender.com']
 };
 
 // Connect to the database first
