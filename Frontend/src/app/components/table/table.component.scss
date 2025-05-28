@@ -7,6 +7,24 @@ table {
   width: 100%;
 }
 
-td, th {
-  width: 25%;
+.password--col {
+  width: 101px;
+  max-width: 101px;
+  min-width: 101px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.table--wrapper{
+  padding: 25px 15px 15px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.filter--input{
+  max-width: 321px;
+  .mat-mdc-form-field-infix {
+    font-size: 0.85em;
+    padding: 0.2em 0;
+    min-height: auto;
+  }
 }

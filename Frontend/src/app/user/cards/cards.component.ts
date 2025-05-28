@@ -10,6 +10,9 @@ import { CardService } from '../../services/card.service';
 })
 export class CardsComponent implements OnInit {
   cardData:any;
+  tableTitle: string = "All Cards";
+  tableDescription: string = "Its all about the saved cards list.";
+  tableColumns: string[] = ['id', 'name', 'number', 'cvv', 'expiry'];
   constructor(readonly cardService: CardService){ }
 
   ngOnInit(){

@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
 })
 export class CardService {
   baseUrl: string = "https://srv-server.onrender.com";
-  httpHdrContntType = { headers: new HttpHeaders({'Content-Type': 'application/json','Accept': 'application/json'})};
   
   constructor(readonly http: HttpClient) { }
 

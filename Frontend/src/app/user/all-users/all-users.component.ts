@@ -10,6 +10,9 @@ import { UserService } from '../../services/user.service';
 })
 export class AllUsersComponent implements OnInit {
   userData:any;
+  tableTitle: string = "All Users";
+  tableDescription: string = "Its all about the register users list.";
+  tableColumns: string[] = ['_id', 'name', 'email', 'phone', 'address','password', 'createdAt', 'updatedAt'];
   constructor(readonly userService: UserService){ }
 
   ngOnInit(){
