@@ -1,6 +1,11 @@
 .example-card {
-  max-width: 400px;
-  margin: 50px auto;
+  padding: 25px 0;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-around;
+  mat-card{
+    max-width: 400px;
+  }
 }
 
 .example-card-footer {
@@ -9,4 +14,12 @@
 
 mat-form-field {
   width: 100%;
+}
+
+.custom--error{
+  position: absolute;
+  bottom: -1px;
+  font-size: 0.75rem;
+  left: 0;
+  color: var(--mat-sys-error);
 }

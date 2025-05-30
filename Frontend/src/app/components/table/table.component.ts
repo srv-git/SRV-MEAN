@@ -38,7 +38,11 @@ export class TableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-  
+  /**
+   * To apply filter
+   * @param event {Event}
+   * @returns {void}
+   */
   applyFilter(event: Event): void {
     console.log('dd',event)
     const filterValue = (event.target as HTMLInputElement).value;
