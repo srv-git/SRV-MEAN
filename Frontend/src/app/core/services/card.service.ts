@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments.ts/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardService {
-  baseUrl: string = "https://srv-server.onrender.com";
+  private readonly baseUrl = environment.apiUrl;
   
   constructor(readonly http: HttpClient) { }
 

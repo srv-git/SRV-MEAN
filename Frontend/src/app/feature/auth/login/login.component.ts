@@ -8,12 +8,12 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { UserService } from '../../services/user.service';
-import { ToasterService } from '../../services/toaster.service';
+import { ToasterService } from '../../../core/services/toaster.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -33,7 +33,7 @@ export class LoginComponent {
   $destroy = new Subject<void>();
   constructor(
     readonly fb: FormBuilder,
-    readonly userService: UserService,
+    readonly authService: AuthService,
     readonly toaster: ToasterService,
     readonly router: Router
   ) {}
@@ -51,12 +51,11 @@ export class LoginComponent {
    */
   handleLogin(): void {
     if (this.loginFormInfo.valid) {
-      this.userService
+      this.authService
         .loginUser(this.loginFormInfo.value)
         .pipe(takeUntil(this.$destroy))
         .subscribe({
           next: (res) => {
-            localStorage.setItem('appInfo', JSON.stringify(res));
             this.toaster.showSuccess(
               res.message ?? 'You have logged in successfully!'
             );

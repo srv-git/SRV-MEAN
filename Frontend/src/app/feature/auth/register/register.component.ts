@@ -15,12 +15,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { Subject, takeUntil } from 'rxjs';
-import { User } from '../../models/user.model';
+import { User } from '../../../models/user.model';
 import { CommonModule } from '@angular/common';
-import { UserService } from '../../services/user.service';
-import { ToasterService } from '../../services/toaster.service';
+import { ToasterService } from '../../../core/services/toaster.service';
 import { Router } from '@angular/router';
-import { checkPasswords } from '../../helper/confirm-password.validator';
+import { checkPasswords } from '../../../helper/confirm-password.validator';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -53,7 +53,7 @@ export class RegisterComponent {
   readonly $destroy = new Subject<void>();
   constructor(
     readonly fb: FormBuilder,
-    readonly userService: UserService,
+    readonly authService: AuthService,
     readonly toaster: ToasterService,
     readonly router: Router
   ) {}
@@ -78,7 +78,7 @@ export class RegisterComponent {
    * @returns {void}
    */
   saveUser(formData: User): void {
-    this.userService
+    this.authService
       .registerUser(formData)
       .pipe(takeUntil(this.$destroy))
       .subscribe({
