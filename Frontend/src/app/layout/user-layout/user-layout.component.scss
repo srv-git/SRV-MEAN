@@ -1,0 +1,18 @@
+main {
+  min-height: calc(100vh - 128px);
+  transition: all 0.3s ease 0s;
+  width: 100%;
+  max-width: 100%;
+  &.sidebar--width {
+    max-width: calc(100vw - 251px);
+  }
+}
+.toggle--sidebar {
+  max-width: 251px;
+  border-radius: 0;
+  border-right: 1px solid #f2f2f2;
+  background-color: #fefdfe;
+}
+.mat-drawer-container {
+  background-color: transparent;
+}

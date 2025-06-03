@@ -1,28 +1,3 @@
 
-<header>
-  <mat-toolbar color="primary">
-    <a class="logo" mat-icon-button color="primary" routerLink ="/" routerLinkActive="active" aria-label="Example icon-button with menu icon">
-      <img src="img/logo.jpg" alt="MEAN" />
-    </a>
-    <span class="example-spacer"></span>
-    @if(loggedIn){
-      <a mat-button color="primary" routerLink ="/users" routerLinkActive="active" >Users</a>
-      <a mat-button color="primary" routerLink ="/cards" routerLinkActive="active" >Cards</a>
-      <button mat-button color="primary" (click)="logout()"><mat-icon>logout</mat-icon>
-        Logout</button>
-    }
-    @else {
-      <a mat-button color="primary" routerLink ="/login" routerLinkActive="active" ><mat-icon>login</mat-icon>
-        LogIn</a>
-      <a mat-button color="primary" routerLink ="/register" routerLinkActive="active" ><mat-icon>person_add</mat-icon> Register</a>
-    }
-  </mat-toolbar>
-</header>
 
-<main>
   <router-outlet />
-</main>
-
-<footer class="bg-green-600 text-white text-center py-5">
-  &copy; 2025 All right reserved.
-</footer>

@@ -59,7 +59,7 @@ export class LoginComponent {
             this.toaster.showSuccess(
               res.message ?? 'You have logged in successfully!'
             );
-            this.router.navigate(['users']);
+            this.router.navigate(['user']);
           },
           error: (err) => {
             this.toaster.showError(err.error?.message ?? 'Login failed!');

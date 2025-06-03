@@ -3,6 +3,7 @@
   margin-inline: auto;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   mat-card{
     max-width: 400px;
   }
