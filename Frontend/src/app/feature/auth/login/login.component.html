@@ -1,6 +1,7 @@
 
 <div class="example-card">
-  <h3 class="text-center mb-4">LOGIN</h3>
+  <h2 class="text-center mb-2">Welcome back!</h2>
+  <p class="text-center mb-4 text-xs">Please fill the fields to login.</p>
   <form [formGroup]="loginFormInfo" (ngSubmit)="handleLogin()">
     <mat-form-field>
       <input autofocus type="email" matInput placeholder="Email *" formControlName="email" />
