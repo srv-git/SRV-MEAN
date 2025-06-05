@@ -1,0 +1,12 @@
+<header>
+  <mat-toolbar color="primary">
+    <a class="logo" mat-icon-button color="primary" routerLink ="/user" routerLinkActive="active" aria-label="Example icon-button with menu icon">
+      <img src="img/logo.jpg" alt="MEAN" />
+    </a>
+    <span>SRV Mean App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="menuClick.emit()">
+        <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+</header>

@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken');
 const cardService = require('../services/cardService');
 
 exports.getAllCards = async (req, res) => {
