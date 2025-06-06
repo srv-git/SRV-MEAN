@@ -3,7 +3,7 @@
     <a class="logo" mat-icon-button color="primary" routerLink ="/user" routerLinkActive="active" aria-label="Example icon-button with menu icon">
       <img src="img/logo.jpg" alt="MEAN" />
     </a>
-    <span class="text-sm">Welcome, {{ user.name | capitalize}}!</span>
+    <span class="text-sm">Welcome, <span class="font-medium">{{ user.name | capitalize}}!</span></span>
     <span class="example-spacer"></span>
     <button mat-icon-button (click)="menuClick.emit()">
         <mat-icon>menu</mat-icon>

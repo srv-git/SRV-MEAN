@@ -1,0 +1,19 @@
+<h2 class="mb-5 text-center text-[1.75rem] font-medium">{{tableTitle}}</h2>
+<mat-card class="example-card" appearance="outlined" *ngIf="userData">
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title class="!mb-3">{{userData.name}}</mat-card-title>
+            @if(userData.profileIcon){
+                <img mat-card-sm-image [src]="userData.profileIcon" [attr.alt]="userData.name">
+            } @else {
+                <span class="profile-icon">{{userData.name | profileIcon}}</span>
+            }
+        </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content class="!flex flex-row flex-wrap">
+        <mat-card-subtitle class="!mb-1 w-1/2"><b>Email: </b> {{userData.email}}</mat-card-subtitle>
+        <mat-card-subtitle class="!mb-2 w-1/2"><b>Phone: </b> {{userData.phone}}</mat-card-subtitle>
+        <mat-card-subtitle class="!mb-2 w-1/2"><b>Address: </b> {{userData.address}}</mat-card-subtitle>
+        <mat-card-subtitle class="!mb-2 w-1/2"><b>Created At : </b> {{userData.createdAt | date: 'MMM dd, yyyy'}}</mat-card-subtitle>
+    </mat-card-content>
+</mat-card>

@@ -13,7 +13,7 @@ export class AllUsersComponent implements OnInit {
   tableTitle: string = "All Users";
   tableDescription: string = "Its all about the register users list.";
   tableColumns: string[] = ['_id', 'name', 'email', 'phone', 'address','password', 'createdAt', 'updatedAt'];
-  constructor(readonly userService: UserService){ console.log('page-loaded!!')}
+  constructor(readonly userService: UserService){}
 
   ngOnInit(){
     this.userService.getAllUsers().subscribe((data)=>{

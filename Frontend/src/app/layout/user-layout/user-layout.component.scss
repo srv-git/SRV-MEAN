@@ -5,7 +5,7 @@ main {
   max-width: 100%;
   &.sidebar--width {
     max-width: calc(100vw - 251px);
-    padding: 15px 0;
+    padding: 15px;
   }
 }
 .toggle--sidebar {

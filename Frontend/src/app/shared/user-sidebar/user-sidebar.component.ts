@@ -23,6 +23,7 @@ export class UserSidebarComponent {
   navItem: any = [
     { name: 'Apis', path: '/user/' },
     { name: 'Users', path: '/user/all' },
+    { name: 'Profile', path: '/user/' + JSON.parse(localStorage.getItem('user')?? '').id },
     { name: 'Cards', path: '/user/cards' },
     { name: 'Topics', path: '/user/topics' }
   ];

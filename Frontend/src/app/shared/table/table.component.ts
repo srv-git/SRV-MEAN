@@ -94,7 +94,7 @@ export class TableComponent implements AfterViewInit {
    * @returns {string | null}
    */
   formatDate(date: Date | string): string | null {
-    return this.datePipe.transform(date, 'MMM, yyyy');
+    return this.datePipe.transform(date, 'MMM dd, yyyy');
   }
 
 }
