@@ -35,6 +35,7 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/login`, data, this.getHeaders()).pipe(
       tap(res => {
         localStorage.setItem('access_token', res.token);
+        localStorage.setItem('user', JSON.stringify(res.user));
         this._isLoggedIn.next(true);
       })
     );
@@ -50,6 +51,7 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('access_token');
+    localStorage.removeItem('user');
     this.router.navigate(['login']);
     this._isLoggedIn.next(false);
   }

@@ -1,10 +1,11 @@
 main {
   min-height: calc(100vh - 128px);
-  transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0;
   width: 100%;
   max-width: 100%;
   &.sidebar--width {
     max-width: calc(100vw - 251px);
+    padding: 15px 0;
   }
 }
 .toggle--sidebar {

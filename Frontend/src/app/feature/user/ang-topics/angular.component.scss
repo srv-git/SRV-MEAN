@@ -1,0 +1,40 @@
+
+.cdk-accordion-item {
+  display: block;
+  border-bottom: solid 1px #eee;
+}
+.cdk-accordion-item-header{
+  &[aria-expanded="true"]{
+    border-bottom: solid 1px #f2f2f2;
+  }
+}
+.cdk-accordion-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 7px 15px;
+  text-align: left;
+}
+
+.cdk-accordion-item-description {
+  color: #999;
+}
+
+.cdk-accordion-item-header:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+ol{
+  list-style-type: disc;
+  padding-left: 20px;
+  li{
+    margin-bottom: 10px;
+  }
+}
+.page-wrapper{
+  max-width: 751px;
+}
