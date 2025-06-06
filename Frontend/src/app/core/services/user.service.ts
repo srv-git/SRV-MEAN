@@ -26,4 +26,8 @@ export class UserService {
   getUser(id: string) : Observable <any> {
     return this.http.get<any>(`${this.baseUrl}/user/${id}`);
   }
+
+  updateUser(id: string, data: any) : Observable <any>{
+    return this.http.put(`${this.baseUrl}/user/edit/${id}`, data, this.getHeaders())
+  }
 }

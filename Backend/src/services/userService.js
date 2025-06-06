@@ -7,3 +7,7 @@ exports.getAllUsers = async () => {
 exports.getUser = async ({ id }) => {
   return await Users.findById(id);
 };
+
+exports.updateUser = async (id, updateData) => {
+  return await Users.findByIdAndUpdate(id, updateData, { new: true });
+};

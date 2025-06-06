@@ -1,12 +1,14 @@
-<h2 class="mb-5 text-center text-[1.75rem] font-medium">{{tableTitle}}</h2>
-<mat-card class="example-card" appearance="outlined" *ngIf="userData">
+<h2 class="mb-5 text-center text-[1.75rem] font-medium">{{updateProfile? 'Edit Profile' : tableTitle}}</h2>
+<p class="mb-2 text-right" *ngIf="!updateProfile">
+    <button title="Edit Profile" mat-mini-fab (click)="handleEditProfile()"><mat-icon> edit </mat-icon></button></p>
+<mat-card class="example-card" appearance="outlined" *ngIf="userData && !updateProfile">
     <mat-card-header>
         <mat-card-title-group>
             <mat-card-title class="!mb-3">{{userData.name}}</mat-card-title>
             @if(userData.profileIcon){
-                <img mat-card-sm-image [src]="userData.profileIcon" [attr.alt]="userData.name">
+            <img mat-card-sm-image [src]="userData.profileIcon" [attr.alt]="userData.name">
             } @else {
-                <span class="profile-icon">{{userData.name | profileIcon}}</span>
+            <span class="profile-icon">{{userData.name | profileIcon}}</span>
             }
         </mat-card-title-group>
     </mat-card-header>
@@ -16,4 +18,27 @@
         <mat-card-subtitle class="!mb-2 w-1/2"><b>Address: </b> {{userData.address}}</mat-card-subtitle>
         <mat-card-subtitle class="!mb-2 w-1/2"><b>Created At : </b> {{userData.createdAt | date: 'MMM dd, yyyy'}}</mat-card-subtitle>
     </mat-card-content>
+</mat-card>
+<mat-card class="edit--profile" appearance="outlined" *ngIf="updateProfile">
+    <form [formGroup]="editProfile" (ngSubmit)="handleUpdateProfile()">
+        <mat-form-field class="w-full">
+            <input matInput type="text" formControlName="name" placeholder="Name *">
+            <mat-error *ngIf="editProfile.get('name')?.hasError('required')">
+                Email is required.
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <input type="text" matInput formControlName="phone" placeholder="Phone *">
+            <mat-error *ngIf="editProfile.get('phone')?.hasError('required')">
+                Email is required.
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-full">
+            <input type="text" matInput formControlName="address" placeholder="Address *">
+            <mat-error *ngIf="editProfile.get('address')?.hasError('required')">
+                Email is required.
+            </mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" class="w-full">Update Profile</button>
+    </form>
 </mat-card>
