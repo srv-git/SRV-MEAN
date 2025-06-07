@@ -1,10 +1,9 @@
-
 .cdk-accordion-item {
   display: block;
   border-bottom: solid 1px #eee;
 }
-.cdk-accordion-item-header{
-  &[aria-expanded="true"]{
+.cdk-accordion-item-header {
+  &[aria-expanded="true"] {
     border-bottom: solid 1px #f2f2f2;
   }
 }
@@ -28,13 +27,13 @@
   background-color: #eee;
 }
 
-ol{
+ol {
   list-style-type: disc;
   padding-left: 20px;
-  li{
+  li {
     margin-bottom: 10px;
   }
 }
-.page-wrapper{
+.page-wrapper {
   max-width: 751px;
 }

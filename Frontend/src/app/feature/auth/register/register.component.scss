@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  mat-card{
+  mat-card {
     max-width: 400px;
   }
 }
@@ -17,7 +17,7 @@ mat-form-field {
   width: 100%;
 }
 
-.custom--error{
+.custom--error {
   position: absolute;
   bottom: -1px;
   font-size: 0.75rem;

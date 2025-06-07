@@ -4,30 +4,34 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
   private readonly baseUrl = environment.apiUrl;
-  
+
   constructor(readonly http: HttpClient) {}
 
   private getHeaders(): { headers: HttpHeaders } {
     return {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
+        'Content-Type': 'application/json',
+      }),
     };
   }
-  
-  getAllUsers() : Observable <any> {
+
+  getAllUsers(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/users`);
   }
 
-  getUser(id: string) : Observable <any> {
+  getUser(id: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/user/${id}`);
   }
 
-  updateUser(id: string, data: any) : Observable <any>{
-    return this.http.put(`${this.baseUrl}/user/edit/${id}`, data, this.getHeaders())
+  updateUser(id: string, data: any): Observable<any> {
+    return this.http.put(
+      `${this.baseUrl}/user/edit/${id}`,
+      data,
+      this.getHeaders()
+    );
   }
 }

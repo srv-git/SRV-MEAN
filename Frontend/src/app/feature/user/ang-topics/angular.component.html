@@ -2,21 +2,24 @@
 <div class="page-wrapper px-5 mb-3 mx-auto">
   <cdk-accordion class="example-accordion">
     @for (item of items; track item; let index = $index) {
-    <cdk-accordion-item #accordionItem="cdkAccordionItem" class="cdk-accordion-item">
+    <cdk-accordion-item
+      #accordionItem="cdkAccordionItem"
+      class="cdk-accordion-item"
+    >
       <button
         class="cdk-accordion-item-header"
         (click)="accordionItem.toggle()"
         tabindex="0"
         [attr.id]="'accordion-header-' + index"
         [attr.aria-expanded]="accordionItem.expanded"
-        [attr.aria-controls]="'accordion-body-' + index">
+        [attr.aria-controls]="'accordion-body-' + index"
+      >
         {{ item.title }}
         <span class="cdk-accordion-item-description">
           @if(accordionItem.expanded){
-            <mat-icon class="align-middle">keyboard_arrow_up</mat-icon>
-          }
-          @else {
-            <mat-icon class="align-middle">keyboard_arrow_down</mat-icon>
+          <mat-icon class="align-middle">keyboard_arrow_up</mat-icon>
+          } @else {
+          <mat-icon class="align-middle">keyboard_arrow_down</mat-icon>
           }
         </span>
       </button>
@@ -31,7 +34,7 @@
       >
         <ol>
           @for(subItem of item.description; track subItem; let index = $index){
-            <li class="text-sm">{{subItem}}</li>
+          <li class="text-sm">{{ subItem }}</li>
           }
         </ol>
       </div>

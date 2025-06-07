@@ -9,10 +9,10 @@ import { authInterceptor } from './core/interceptors/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideToastr(), 
-    provideAnimations(), 
-    provideRouter(routes), 
-    provideHttpClient(withInterceptors([tokenInterceptor, authInterceptor]))
-  ]
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideToastr(),
+    provideAnimations(),
+    provideRouter(routes),
+    provideHttpClient(withInterceptors([tokenInterceptor, authInterceptor])),
+  ],
 };

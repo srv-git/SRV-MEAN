@@ -8,10 +8,17 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-layout',
-  imports: [RouterOutlet, UserHeaderComponent, UserFooterComponent, UserSidebarComponent, MatSidenavModule, CommonModule],
+  imports: [
+    RouterOutlet,
+    UserHeaderComponent,
+    UserFooterComponent,
+    UserSidebarComponent,
+    MatSidenavModule,
+    CommonModule,
+  ],
   templateUrl: './user-layout.component.html',
-  styleUrl: './user-layout.component.scss'
+  styleUrl: './user-layout.component.scss',
 })
 export class UserLayoutComponent {
-  isSidenavOpen: boolean= true;
+  isSidenavOpen: boolean = true;
 }

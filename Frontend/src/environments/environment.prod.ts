@@ -1,5 +1,4 @@
-
 export const environment = {
   production: false,
-  apiUrl: 'https://srv-server.onrender.com'
+  apiUrl: 'https://srv-server.onrender.com',
 };

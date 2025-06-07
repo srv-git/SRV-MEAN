@@ -1,6 +1,9 @@
 import { FormGroup, ValidationErrors } from '@angular/forms';
 
-export function checkPasswords(controlName: string, matchingControlName: string) {
+export function checkPasswords(
+  controlName: string,
+  matchingControlName: string
+) {
   return (group: FormGroup): ValidationErrors | null => {
     const control = group.get(controlName);
     const matchingControl = group.get(matchingControlName);
@@ -20,4 +23,3 @@ export function checkPasswords(controlName: string, matchingControlName: string)
     }
   };
 }
-

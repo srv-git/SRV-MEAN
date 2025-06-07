@@ -8,12 +8,17 @@ import { CapitalizePipe } from '../../core/pipe/capitalize.pipe';
 
 @Component({
   selector: 'app-user-header',
-  imports: [MatButtonModule, MatIconModule, MatToolbarModule, RouterLink, CapitalizePipe],
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    RouterLink,
+    CapitalizePipe,
+  ],
   templateUrl: './user-header.component.html',
   styleUrl: './user-header.component.scss',
 })
 export class UserHeaderComponent {
-  user: User = JSON.parse(localStorage.getItem('user')?? '');
+  user: User = JSON.parse(localStorage.getItem('user') ?? '');
   @Output() menuClick = new EventEmitter<void>();
-  
 }

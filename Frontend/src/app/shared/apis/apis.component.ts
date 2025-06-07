@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-apis',
   imports: [],
   templateUrl: './apis.component.html',
-  styleUrl: './apis.component.scss'
+  styleUrl: './apis.component.scss',
 })
-export class ApisComponent {
-
-}
+export class ApisComponent {}

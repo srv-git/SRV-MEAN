@@ -59,17 +59,20 @@ export class RegisterComponent {
   ) {}
 
   ngOnInit() {
-    this.registerForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', [Validators.required]],
-      address: ['', Validators.required],
-      gender: ['', Validators.required],
-    }, {
-      validator: checkPasswords('password', 'confirmPassword') 
-    } as AbstractControlOptions);
+    this.registerForm = this.fb.group(
+      {
+        name: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', Validators.required],
+        password: ['', [Validators.required, Validators.minLength(8)]],
+        confirmPassword: ['', [Validators.required]],
+        address: ['', Validators.required],
+        gender: ['', Validators.required],
+      },
+      {
+        validator: checkPasswords('password', 'confirmPassword'),
+      } as AbstractControlOptions
+    );
   }
 
   /**

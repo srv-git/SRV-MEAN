@@ -4,7 +4,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +19,4 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
-
-}
+export class HeaderComponent {}

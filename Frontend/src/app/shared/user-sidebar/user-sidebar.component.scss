@@ -1,9 +1,12 @@
 a {
-    &.active {
-        background-color: var(--mdc-text-button-label-text-color, var(--mat-sys-primary)); /* Material blue */
-            color: #fff !important;
-        > *{
-            color: #fff !important;
-        }
+  &.active {
+    background-color: var(
+      --mdc-text-button-label-text-color,
+      var(--mat-sys-primary)
+    );
+    color: #fff !important;
+    > * {
+      color: #fff !important;
     }
+  }
 }

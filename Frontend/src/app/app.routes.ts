@@ -7,12 +7,14 @@ export const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
-    loadChildren: () => import('./feature/auth/auth.routes').then(m=>m.default)
+    loadChildren: () =>
+      import('./feature/auth/auth.routes').then((m) => m.default),
   },
   {
     path: 'user',
     component: UserLayoutComponent,
-    loadChildren: () => import('./feature/user/user.routes').then(m=>m.default),
+    loadChildren: () =>
+      import('./feature/user/user.routes').then((m) => m.default),
     canActivate: [authGuard],
   },
   {
