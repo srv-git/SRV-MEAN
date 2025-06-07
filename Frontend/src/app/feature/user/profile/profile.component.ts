@@ -14,7 +14,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ToasterService } from '../../../core/services/toaster.service';
-
 @Component({
   selector: 'app-profile',
   imports: [
@@ -63,7 +62,6 @@ export class ProfileComponent {
   }
 
   handleUpdateProfile(): void {
-    console.log(this.editProfile.value);
     if (this.editProfile.valid) {
       this.userService
         .updateUser(this.userId, this.editProfile.value)
@@ -77,7 +75,7 @@ export class ProfileComponent {
             })
           );
           this.userData = res;
-          this.toaster.showSuccess('Your profile updated successfully!');
+          this.toaster.showSuccess('Profile updated successfully!');
         });
     }
   }

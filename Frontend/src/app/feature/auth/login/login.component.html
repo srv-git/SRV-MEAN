@@ -3,13 +3,8 @@
   <p class="text-center mb-4 text-xs">Please fill the fields to login.</p>
   <form [formGroup]="loginFormInfo" (ngSubmit)="handleLogin()">
     <mat-form-field>
-      <input
-        autofocus
-        type="email"
-        matInput
-        placeholder="Email *"
-        formControlName="email"
-      />
+      <input autofocus type="email" matInput placeholder="Email *" formControlName="email" />
+      <mat-hint class="text-sm"><small>We'll never share your email with anyone else.</small></mat-hint>
       <mat-error *ngIf="loginFormInfo.get('email')?.hasError('required')">
         Email is required.
       </mat-error>
@@ -19,12 +14,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input
-        type="password"
-        matInput
-        placeholder="Password *"
-        formControlName="password"
-      />
+      <input type="password" matInput placeholder="Password *" formControlName="password" />
       <mat-error *ngIf="loginFormInfo.get('password')?.hasError('required')">
         Password is required.
       </mat-error>
@@ -33,5 +23,9 @@
     <button type="submit" mat-raised-button color="primary" class="w-full">
       Submit
     </button>
+    <p class="text-center my-5 text-sm"><a mat-button color="primary" [routerLink]="['/auth/forgot-password']">Forgot Password</a></p>
+    <p class="text-center text-sm">
+      Don't have an account? <a mat-button color="primary" [routerLink]="['/auth/register']">Register</a>
+    </p>
   </form>
 </div>

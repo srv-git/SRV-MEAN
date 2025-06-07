@@ -12,7 +12,7 @@ import { ToasterService } from '../../../core/services/toaster.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -24,6 +24,7 @@ import { AuthService } from '../../../core/services/auth.service';
     MatButtonModule,
     ReactiveFormsModule,
     CommonModule,
+    RouterLink,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

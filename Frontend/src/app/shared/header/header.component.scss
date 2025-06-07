@@ -12,3 +12,11 @@
     height: auto;
   }
 }
+
+header{
+  a{
+    &.active{
+      background-color: var(--mat-text-button-state-layer-color, rgba(0, 92, 187, 0.08));
+    }
+  }
+}

@@ -12,7 +12,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       if (err.status === 401) {
         // Handle 401 Unauthorized
         toaster.showError('Session expired!');
-        router.navigate(['/login']);
+        router.navigate(['/auth/login']);
       } else if (err.status === 403) {
         // You can redirect or show a forbidden message
         toaster.showError('forbidden!');

@@ -8,6 +8,12 @@ export const routes: Routes = [
     path: '',
     component: DefaultLayoutComponent,
     loadChildren: () =>
+      import('./feature/default/front.routes').then((m) => m.default),
+  },
+  {
+    path: 'auth',
+    component: DefaultLayoutComponent,
+    loadChildren: () =>
       import('./feature/auth/auth.routes').then((m) => m.default),
   },
   {
