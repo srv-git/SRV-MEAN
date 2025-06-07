@@ -13,6 +13,7 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ToasterService } from '../../../core/services/toaster.service';
 
 @Component({
   selector: 'app-profile',
@@ -35,9 +36,10 @@ export class ProfileComponent {
   updateProfile: boolean = false;
   userId!: string;
   constructor(
-    readonly userService: UserService,
+    private readonly userService: UserService,
     private readonly route: ActivatedRoute,
-    private readonly fb: FormBuilder
+    private readonly fb: FormBuilder,
+    private readonly toaster: ToasterService
   ) {}
 
   ngOnInit() {
@@ -75,6 +77,7 @@ export class ProfileComponent {
             })
           );
           this.userData = res;
+          this.toaster.showSuccess('Your profile updated successfully!');
         });
     }
   }

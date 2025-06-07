@@ -1,13 +1,8 @@
 <h2 class="mb-5 text-center text-[1.75rem] font-medium">
   {{ updateProfile ? "Edit Profile" : tableTitle }}
 </h2>
-<p class="mb-2 text-right" *ngIf="!updateProfile">
-  <button title="Edit Profile" mat-mini-fab (click)="handleEditProfile()">
-    <mat-icon> edit </mat-icon>
-  </button>
-</p>
 <mat-card
-  class="example-card"
+  class="example-card !rounded-md"
   appearance="outlined"
   *ngIf="userData && !updateProfile"
 >
@@ -40,8 +35,13 @@
       {{ userData.createdAt | date : "MMM dd, yyyy" }}</mat-card-subtitle
     >
   </mat-card-content>
+  <p class="mb-2 text-right mr-5" *ngIf="!updateProfile">
+    <button title="Edit Profile" mat-mini-fab (click)="handleEditProfile()">
+      <mat-icon> edit </mat-icon>
+    </button>
+  </p>
 </mat-card>
-<mat-card class="edit--profile" appearance="outlined" *ngIf="updateProfile">
+<mat-card class="edit--profile  !rounded-md" appearance="outlined" *ngIf="updateProfile">
   <form [formGroup]="editProfile" (ngSubmit)="handleUpdateProfile()">
     <mat-form-field class="w-full">
       <input matInput type="text" formControlName="name" placeholder="Name *" />
