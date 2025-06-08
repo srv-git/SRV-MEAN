@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
+  AbstractControlOptions,
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
@@ -8,6 +9,7 @@ import {
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { checkPasswords } from '../../../helper/confirm-password.validator';
 
 @Component({
   selector: 'app-reset-password',
@@ -21,10 +23,15 @@ export class ResetPasswordComponent {
   constructor(private readonly fb: FormBuilder) {}
 
   ngOnInit() {
-    this.resetForm = this.fb.group({
-      password: ['', Validators.minLength(8)],
-      confirmPassword: ['', Validators.minLength(8)],
-    });
+    this.resetForm = this.fb.group(
+      {
+        password: ['', Validators.minLength(8)],
+        confirmPassword: ['', Validators.minLength(8)],
+      },
+      {
+        Validators: checkPasswords('password', 'confirmPassword'),
+      } as AbstractControlOptions
+    );
   }
 
   handleSubmit(): void {
