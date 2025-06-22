@@ -14,9 +14,18 @@
 }
 
 header{
+    top: 0;
+    border-bottom: 2px solid #f7f7f7;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 1;
   a{
     &.active{
       background-color: var(--mat-text-button-state-layer-color, rgba(0, 92, 187, 0.08));
     }
   }
+}
+body {
+  padding-top: 66px
 }
