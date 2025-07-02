@@ -9,7 +9,7 @@ import {
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { checkPasswords } from '../../../helper/confirm-password.validator';
+import { checkPasswords } from '../../../core/validators/confirm-password.validator';
 
 @Component({
   selector: 'app-reset-password',
