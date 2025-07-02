@@ -1,6 +1,8 @@
 <div class="example-card dark:text-white">
   <h2 class="text-center mb-2">Welcome back!</h2>
-  <p class="text-center mb-4 text-xs">Please fill the fields to login.</p>
+  <p class="text-center mb-2 text-xs">Please fill the fields to login.</p>
+  <p class="text-center mb-4 text-xs bg-yellow-50 text-yellow-800 py-2">You can click submit to login with default
+    credentials.</p>
   <form [formGroup]="loginFormInfo" (ngSubmit)="handleLogin()">
     <mat-form-field>
       <input autofocus type="email" matInput placeholder="Email *" formControlName="email" />
