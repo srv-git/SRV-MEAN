@@ -2,8 +2,37 @@ main {
   min-height: calc(100vh - 128px);
   width: 100%;
   padding: 15px;
+  overflow: hidden;
+  position: relative;
   &.sidebar--width {
     max-width: calc(100vw - 251px);
+  }
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    background: rgb(255 0 0 / 10%);
+  }
+
+  &::before {
+    top: -50%;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    transform: rotateZ(135deg);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  &::after {
+    top: 50%;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    transform: rotateZ(135deg);
+    z-index: -1;
+    pointer-events: none;
+    background-color: rgb(0 135 0 / 10%);
   }
 }
 .toggle--sidebar {
