@@ -7,28 +7,41 @@ main {
   &::after,
   &::before {
     content: "";
-    position: absolute;
-    background: rgb(255 0 0 / 10%);
+    position: fixed;
+    border: 20vw solid;
+    z-index: -1;
+    pointer-events: none;
+    width: 0;
+    height: 0;
   }
 
   &::before {
-    top: -50%;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    transform: rotateZ(135deg);
-    z-index: -1;
-    pointer-events: none;
+    border-color: rgba(255, 0, 0, 0.1) transparent transparent  rgba(255, 0, 0, 0.1);
+    top: 0;
+    left: 0;
   }
 
   &::after {
-    top: 50%;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    transform: rotateZ(135deg);
-    z-index: -1;
-    pointer-events: none;
-    background-color: rgb(0 135 0 / 10%);
+    border-color:  transparent rgb(0 135 0 / 10%) rgb(0 135 0 / 10%) transparent;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1199px){
+  main{
+    &::after,
+    &::before {
+      border-width: 30vh;
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  main{
+    &::after,
+    &::before {
+      border-width: 28vh;
+    }
   }
 }

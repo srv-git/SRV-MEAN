@@ -1,0 +1,9 @@
+
+::ng-deep .mat-mdc-checkbox-checked .mdc-label {
+  color: var(--mdc-checkbox-selected-icon-color, var(--mat-sys-primary)) !important;
+}
+
+::ng-deep button.active .mdc-button__ripple::before{
+  opacity: var(--mat-text-button-pressed-state-layer-opacity, var(--mat-sys-pressed-state-layer-opacity));
+  background-color: var(--mat-text-button-state-layer-color, var(--mat-sys-primary));
+}

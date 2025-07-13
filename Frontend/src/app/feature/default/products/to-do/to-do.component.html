@@ -1,0 +1,55 @@
+<div class="container mx-auto pt-5">
+    <div class="flex flex-wrap">
+        <div class="w-full px-2 mb-5">
+            <h3 class="font-medium mb-2">To Do App</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus mollitia neque voluptates? Quos
+                deleniti animi harum qui enim earum iure! Neque, voluptatum beatae. Aspernatur eum hic temporibus.
+                Consequatur, quae hic?</p>
+            <div class="text-right">
+                <button mat-raised-button (click)="handleAddTask()"><mat-icon>add</mat-icon> Add Task</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-wrap justify-center mb-3">
+        <button mat-button [class.active]="filterType == ''" (click)="handleTaskFilter('')">All Task</button>
+        <button mat-button [class.active]="filterType == 'completed'"
+            (click)="handleTaskFilter('completed')">Completed</button>
+        <button mat-button [class.active]="filterType == 'pending'"
+            (click)="handleTaskFilter('pending')">Pending</button>
+    </div>
+    <div class="flex flex-wrap">
+        @if (filteredTaskItems$ | async; as taskItems) {
+        @for (taskItem of taskItems; track $index) {
+        <div class="w-full px-2 mb-4 min-[480px]:w-1/2 xs:w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4">
+            <mat-card class="p-3 flex flex-col justify-between h-full !rounded-md" appearance="outlined">
+                <div class="mb-2">
+                    <h2 class="flex justify-between items-center mb-2 font-medium"><span class="text-base line-clamp-2"
+                            title="{{taskItem.title}}">{{taskItem.title}}</span>
+                        <span class="text-sm pl-2">{{taskItem.date}}</span>
+                    </h2>
+                    <p class="text-slate-600 text-sm mb-0 text-justify hyphens-auto line-clamp-5"
+                        title="{{taskItem.description}}">
+                        {{taskItem.description}}
+                    </p>
+                </div>
+                <div class="flex justify-between">
+                    <div class="edit--action">
+                        <button mat-icon-button class="opacity-50 hover:opacity-100"
+                            (click)="handleEditTask()"><mat-icon>edit</mat-icon></button>
+                        <button mat-icon-button class="!text-red-500 opacity-50 hover:opacity-100"
+                            (click)="handleDeleteTask()"><mat-icon>delete</mat-icon></button>
+                    </div>
+                    <mat-checkbox [checked]="taskItem.isCompleted" name="task" id="task" labelPosition="before"
+                        class="opacity-50 hover:opacity-100">
+                        Mark as completed</mat-checkbox>
+                </div>
+            </mat-card>
+        </div>
+        } @empty {
+        <div>No items found.</div>
+        }
+        } @else {
+        <div>Loading...</div>
+        }
+    </div>
+</div>

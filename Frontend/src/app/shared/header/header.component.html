@@ -1,44 +1,53 @@
 <header>
   <mat-toolbar color="primary">
-    <a
-      class="logo"
-      mat-icon-button
-      color="primary"
-      routerLink="/"
-      routerLinkActive="active"
-      aria-label="Example icon-button with menu icon"
-    >
-      <img src="img/logo.jpg" alt="MEAN" />
-    </a>
-    <span class="text-sm mr-3">SRV Mean App</span>
-    <a mat-button color="primary" routerLink="/expertise" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      > Expertise</a
-    >
-    <a mat-button color="primary" routerLink="/products" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      > Products</a
-    >
-    <a mat-button color="primary" routerLink="/about" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      > About</a
-    >
-    <a mat-button color="primary" routerLink="/contact" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      > Contact</a
-    >
-    <span class="example-spacer"></span>
-    <a mat-button color="primary" routerLink="/auth/login" routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      > LogIn</a
-    >
-    <a
-      mat-button
-      color="primary"
-      routerLink="/auth/register"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      > Register</a
-    >
+    <nav class="container mx-auto flex items-center">
+      <a class="logo" mat-icon-button color="primary" routerLink="/" routerLinkActive="active"
+        aria-label="Example icon-button with menu icon">
+        <img src="img/logo.jpg" alt="MEAN" />
+      </a>
+      <span class="text-sm mr-3">SRV Mean App</span>
+      <a mat-button color="primary" [matMenuTriggerFor]="Expertise">
+        <span class="flex items-center">Expertise <mat-icon>keyboard_arrow_down</mat-icon></span>
+      </a>
+      <mat-menu #Expertise="matMenu">
+        <a mat-menu-item routerLink="/all" color="primary" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}">All</a>
+        <a mat-menu-item routerLink="/full-calendar" color="primary" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}">Full
+          Calendar</a>
+        <a mat-menu-item [routerLink]="['/data-table']" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}">Data table</a>
+        <a mat-menu-item [routerLink]="['/map']" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}">Map</a>
+        <a mat-menu-item routerLink="/complex-form" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Complex Form</a>
+      </mat-menu>
+      <a mat-button color="primary" [matMenuTriggerFor]="Products">
+        <span class="flex items-center">Products <mat-icon>keyboard_arrow_down</mat-icon></span>
+      </a>
+      <mat-menu #Products="matMenu">
+        <a mat-menu-item routerLink="/products/all/" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">All</a>
+        <a mat-menu-item routerLink="/products/calculator" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Calculator</a>
+        <a mat-menu-item [routerLink]="['/products/chat-app']" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Chat
+          App</a>
+        <a mat-menu-item [routerLink]="['/products/clock']" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Clock</a>
+        <a mat-menu-item [routerLink]="['/products/to-do']" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">To
+          Do</a>
+      </mat-menu>
+      <a mat-button color="primary" routerLink="/about" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"> About Me</a>
+      <a mat-button color="primary" routerLink="/contact" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"> Contact</a>
+      <span class="example-spacer"></span>
+      <a mat-button color="primary" routerLink="/auth/login" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"> LogIn</a>
+      <a mat-button color="primary" routerLink="/auth/register" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"> Register</a>
+    </nav>
   </mat-toolbar>
 </header>
