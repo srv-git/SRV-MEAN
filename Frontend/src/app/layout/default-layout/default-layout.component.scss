@@ -1,3 +1,47 @@
-main{
-  min-height: calc(100vh - 128px);
+main {
+  padding-top: 66px;
+  min-height: calc(100vh - 64px);
+  overflow: hidden;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    position: fixed;
+    border: 20vw solid;
+    z-index: -1;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    border-color: rgba(255, 0, 0, 0.1) transparent transparent  rgba(255, 0, 0, 0.1);
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    border-color:  transparent rgb(0 135 0 / 10%) rgb(0 135 0 / 10%) transparent;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1199px){
+  main{
+    &::after,
+    &::before {
+      border-width: 30vh;
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  main{
+    &::after,
+    &::before {
+      border-width: 28vh;
+    }
+  }
 }

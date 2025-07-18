@@ -6,13 +6,30 @@ import { UserLayoutComponent } from './layout/user-layout/user-layout.component'
 export const routes: Routes = [
   {
     path: '',
+    loadChildren: () =>
+      import('./feature/default/front.routes').then((m) => m.default),
+  },
+  {
+    path: 'auth',
     component: DefaultLayoutComponent,
-    loadChildren: () => import('./feature/auth/auth.routes').then(m=>m.default)
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./feature/auth/auth.routes').then((m) => m.default),
+      },
+    ],
   },
   {
     path: 'user',
     component: UserLayoutComponent,
-    loadChildren: () => import('./feature/user/user.routes').then(m=>m.default),
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./feature/user/user.routes').then((m) => m.default),
+      },
+    ],
     canActivate: [authGuard],
   },
   {

@@ -12,7 +12,7 @@ import { ToasterService } from '../../../core/services/toaster.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { Subject, takeUntil } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -24,6 +24,7 @@ import { AuthService } from '../../../core/services/auth.service';
     MatButtonModule,
     ReactiveFormsModule,
     CommonModule,
+    RouterLink,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -40,8 +41,8 @@ export class LoginComponent {
 
   ngOnInit() {
     this.loginFormInfo = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      email: ['verma@demo.com', [Validators.required, Validators.email]],
+      password: ['12345678', [Validators.required, Validators.minLength(8)]],
     });
   }
 
@@ -59,7 +60,7 @@ export class LoginComponent {
             this.toaster.showSuccess(
               res.message ?? 'You have logged in successfully!'
             );
-            this.router.navigate(['user']);
+            this.router.navigate(['user/' + res?.user?.id]);
           },
           error: (err) => {
             this.toaster.showError(err.error?.message ?? 'Login failed!');

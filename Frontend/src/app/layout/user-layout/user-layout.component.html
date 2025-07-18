@@ -1,11 +1,17 @@
-<app-user-header (menuClick)="toggleSidebar.toggle()"></app-user-header>
+<app-user-header (menuClick)="handleSidebar()"></app-user-header>
 <mat-sidenav-container class="dashboard-container" [hasBackdrop]="false">
-  <mat-sidenav [(opened)]="isSidenavOpen" [mode]="'push'" opened #toggleSidebar class="toggle--sidebar">
+  <mat-sidenav
+    [(opened)]="isSidenavOpen"
+    [mode]="'push'"
+    opened
+    #toggleSidebar
+    class="toggle--sidebar"
+  >
     <app-user-sidebar></app-user-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>
-    <main [ngClass]="{'sidebar--width': isSidenavOpen}">
-        <router-outlet />
+    <main [ngClass]="{ 'sidebar--width': isSidenavOpen }">
+      <router-outlet />
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

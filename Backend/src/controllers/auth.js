@@ -18,7 +18,13 @@ exports.login = async (req, res) => {
   try {
     const user = await authService.loginUser(req.body);
     const token = jwt.sign({ userId: user._id }, JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN || '1h' });
-    res.json({ token });
+    res.json({ 
+      token,
+      user: {
+        name: user.name,
+        id: user._id
+      }
+    });
   } catch (err) {
     // next(err);
     res.status(400).json({ message: err.message });

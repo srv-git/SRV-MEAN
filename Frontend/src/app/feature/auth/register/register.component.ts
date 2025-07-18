@@ -19,7 +19,7 @@ import { User } from '../../../models/user.model';
 import { CommonModule } from '@angular/common';
 import { ToasterService } from '../../../core/services/toaster.service';
 import { Router } from '@angular/router';
-import { checkPasswords } from '../../../helper/confirm-password.validator';
+import { checkPasswords } from '../../../core/validators/confirm-password.validator';
 import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
@@ -59,17 +59,20 @@ export class RegisterComponent {
   ) {}
 
   ngOnInit() {
-    this.registerForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', [Validators.required]],
-      address: ['', Validators.required],
-      gender: ['', Validators.required],
-    }, {
-      validator: checkPasswords('password', 'confirmPassword') 
-    } as AbstractControlOptions);
+    this.registerForm = this.fb.group(
+      {
+        name: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        phone: ['', Validators.required],
+        password: ['', [Validators.required, Validators.minLength(8)]],
+        confirmPassword: ['', [Validators.required]],
+        address: ['', Validators.required],
+        gender: ['', Validators.required],
+      },
+      {
+        validator: checkPasswords('password', 'confirmPassword'),
+      } as AbstractControlOptions
+    );
   }
 
   /**

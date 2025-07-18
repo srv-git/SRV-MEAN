@@ -1,21 +1,23 @@
-<mat-nav-list>
+<mat-nav-list class="py-2">
+  @for (item of navItem; track item) {
   <a
     mat-button
     color="primary"
     class="w-full block mb-2 py-2 text-sm !justify-start"
-    routerLink="/user/all"
+    [routerLink]="item.path"
     routerLinkActive="active"
-    ><mat-icon class="align-middle">keyboard_arrow_right</mat-icon> Users</a
+    [routerLinkActiveOptions]="{ exact: true }"
   >
-  <a
+    <mat-icon class="align-middle">keyboard_arrow_right</mat-icon>
+    {{ item.name }}
+  </a>
+  }
+  <button
     mat-button
     color="primary"
     class="w-full block py-2 text-sm !justify-start"
-    routerLink="/user/cards"
-    routerLinkActive="active"
-    ><mat-icon class="align-middle">keyboard_arrow_right</mat-icon> Cards</a
+    (click)="logout()"
   >
-  <button mat-button color="primary" class="w-full block py-2 text-sm !justify-start" (click)="logout()">
     <mat-icon class="align-middle">logout</mat-icon> Logout
   </button>
 </mat-nav-list>

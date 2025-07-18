@@ -1,8 +1,10 @@
 <!-- ---------------Reactive Form -------------------------------- -->
-<h3 class="text-center pt-5">Register with any one Form.</h3>
+<h3 class="text-center pt-5 dark:text-white">Register with any one Form.</h3>
 <div class="example-card">
-  <mat-card appearance="outlined">
-    <h3 class="mb-4 text-center pt-4">REGISTER - <small>Reactive Form</small></h3>
+  <mat-card appearance="outlined" class="dark:!bg-zinc-400">
+    <h3 class="mb-4 text-center pt-4">
+      REGISTER - <small>Reactive Form</small>
+    </h3>
     <form [formGroup]="registerForm" class="px-4 pb-4" (ngSubmit)="formSubmit(true)">
       <mat-form-field>
         <mat-label>Username</mat-label>
@@ -15,7 +17,8 @@
       <mat-form-field>
         <mat-label>Password</mat-label>
         <input matInput formControlName="password" />
-        <mat-hint *ngIf="registerForm.get('password')?.dirty"><small>Password: 8+ chars, uppercase, number.</small></mat-hint>
+        <mat-hint *ngIf="registerForm.get('password')?.dirty"><small>Password: 8+ chars, uppercase,
+            number.</small></mat-hint>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Confirm Password</mat-label>
@@ -45,10 +48,11 @@
     </form>
   </mat-card>
 
-
   <!-- --------------Template Driven Form-------------------------- -->
-  <mat-card appearance="outlined">
-    <h3 class="mb-4 text-center pt-4">REGISTER <small>Template Driven Form</small></h3>
+  <mat-card appearance="outlined" class="dark:!bg-zinc-400">
+    <h3 class="mb-4 text-center pt-4">
+      REGISTER <small>Template Driven Form</small>
+    </h3>
     <form #registerUser="ngForm" class="px-4 pb-4" (ngSubmit)="formSubmit(false)">
       <mat-form-field>
         <mat-icon matPrefix>person_outline</mat-icon>
@@ -63,17 +67,19 @@
       <mat-form-field>
         <mat-icon matPrefix>lock_outline</mat-icon>
         <input type="password" autocomplete="new-password" matInput placeholder="Password *" name="password" required
-          [(ngModel)]="registerInfo.password" #password="ngModel"/>
-        <mat-hint  *ngIf="password.dirty"><small>Password: 8+ chars, uppercase, number.</small></mat-hint>
+          [(ngModel)]="registerInfo.password" #password="ngModel" />
+        <mat-hint *ngIf="password.dirty"><small>Password: 8+ chars, uppercase, number.</small></mat-hint>
       </mat-form-field>
       <div class="relative">
         <mat-form-field>
           <mat-icon matPrefix>lock_outline</mat-icon>
           <input type="password" autocomplete="new-password" matInput placeholder="Confirm Password *"
-            name="confirmPassword" required [(ngModel)]="registerInfo.confirmPassword" #confirmPassword="ngModel"/>
+            name="confirmPassword" required [(ngModel)]="registerInfo.confirmPassword" #confirmPassword="ngModel" />
         </mat-form-field>
-        <div *ngIf="(password.value !== confirmPassword.value) && confirmPassword.dirty" class="custom--error">
-            Passwords do not match.
+        <div *ngIf="
+            password.value !== confirmPassword.value && confirmPassword.dirty
+          " class="custom--error">
+          Passwords do not match.
         </div>
       </div>
       <mat-form-field>

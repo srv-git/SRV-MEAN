@@ -1,0 +1,38 @@
+<div class="container mx-auto">
+    <div class="flex flex-wrap">
+        <div class="w-full pt-5 px-2">
+            <h3 class="font-medium mb-2">Clock App</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus mollitia neque voluptates? Quos
+                deleniti animi harum qui enim earum iure! Neque, voluptatum beatae. Aspernatur eum hic temporibus.
+                Consequatur, quae hic?</p>
+        </div>
+        <div class="w-full pt-2 px-2">
+            <div
+                class="w-[300px] h-[300px] relative mx-auto rounded-[50%] border-[10px] border border-solid border-gray-700">
+                <div class="h-full relative">
+                    <div class="number one">1</div>
+                    <div class="number two">2</div>
+                    <div class="number three">3</div>
+                    <div class="number four">4</div>
+                    <div class="number five">5</div>
+                    <div class="number six">6</div>
+                    <div class="number seven">7</div>
+                    <div class="number eight">8</div>
+                    <div class="number nine">9</div>
+                    <div class="number ten">10</div>
+                    <div class="number eleven">11</div>
+                    <div class="number twelve">12</div>
+                </div>
+                <div class="h-full w-full absolute top-[0] left-[0]">
+                    <div class="bars second"
+                        [ngStyle]="{ transform: 'translateX(-0.75px) rotate(' + secondDegree + 'deg)' }"></div>
+                    <div class="bars minute" [ngStyle]="{transform: 'translateX(-1.5px) rotate('+minuteDegree+'deg)'}">
+                    </div>
+                    <div class="bars hour" [ngStyle]="{transform: 'translateX(-2.5px) rotate('+hourDegree+'deg)'}">
+                    </div>
+                    <div class="point"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

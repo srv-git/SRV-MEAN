@@ -1,0 +1,63 @@
+<div class="container mx-auto px-4">
+    <div class="contact--form ">
+        <form (ngSubmit)="onSubmit()" [formGroup]="contactForm" class="w-[521px] mx-auto py-5">
+            <mat-form-field class="w-full md:w-1/2 px-1">
+                <input type="text" 
+                    matInput
+                    formControlName="name"
+                    placeholder="Name"
+                >
+                @if(!contactForm.get('name')?.valid){
+                    <mat-error >
+                        This field is required
+                    </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="w-full md:w-1/2 px-1">
+                <input type="email" 
+                    matInput
+                    formControlName="email"
+                    placeholder="Email"
+                >
+                @if(!contactForm.get('email')?.valid){
+                    <mat-error >
+                        This field is required
+                    </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="w-full md:w-1/2 px-1">
+                <input type="text"
+                    matInput
+                    formControlName="phone"
+                    placeholder="Phone"
+                >
+                @if(!contactForm.get('phone')?.valid){
+                    <mat-error >
+                        This field is required
+                    </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="w-full md:w-1/2 px-1">
+                <input type="text"
+                    matInput
+                    formControlName="city"
+                    placeholder="City"
+                >
+                @if(!contactForm.get('city')?.valid){
+                    <mat-error >
+                        This field is required
+                    </mat-error>
+                }
+            </mat-form-field>
+            <mat-form-field class="w-full  px-1">
+                <textarea matInput formControlName="message" placeholder="Message" cols="30" rows="4"></textarea>
+                @if(!contactForm.get('message')?.valid){
+                    <mat-error >
+                        This field is required
+                    </mat-error>
+                }
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary">Send</button>
+        </form>
+    </div>
+</div>

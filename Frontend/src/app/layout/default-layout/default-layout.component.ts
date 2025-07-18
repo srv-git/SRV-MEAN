@@ -5,14 +5,8 @@ import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-default-layout',
-  imports: [
-      HeaderComponent,
-      FooterComponent,
-      RouterOutlet
-    ],
+  imports: [HeaderComponent, FooterComponent, RouterOutlet],
   templateUrl: './default-layout.component.html',
-  styleUrl: './default-layout.component.scss'
+  styleUrl: './default-layout.component.scss',
 })
-export class DefaultLayoutComponent {
-
-}
+export class DefaultLayoutComponent {}

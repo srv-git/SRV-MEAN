@@ -1,0 +1,121 @@
+
+.number {
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    &.one{
+        right: 68px;
+        top: 28px;
+    }
+    &.two{
+        right: 30px;
+        top: 70px;
+    }
+    &.three{
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &.four{
+        right: 30px;
+        bottom: 70px;
+    }
+    &.five{
+        right: 70px;
+        bottom: 25px;
+    }
+    &.six{
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &.seven{
+        left: 70px;
+        bottom: 25px;
+    }
+    &.eight{
+        left: 30px;
+        bottom: 70px;
+    }
+    &.nine{
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &.ten{
+        left: 30px;
+        top: 70px;
+    }
+    &.eleven{
+        left: 68px;
+        top: 28px;
+    }
+    &.twelve{
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }    
+}
+.bars{
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    width: 1.5px;
+    height: calc(50% - 38px);
+    background-color: black;
+    transform-origin: bottom center;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        background: none;
+    }
+    &.second{
+        background-color: red;
+        transform: translateX(-0.75px) rotate(0deg);
+        &::before {
+            border-width: 5px;
+            border-bottom-color: red;
+            top: -6px;
+            left: -4px;
+        }
+    }
+    &.minute{
+        height: calc(50% - 48px);
+        top: 48px;
+        width: 3px;
+        transform: translateX(-1.5px) rotate(0deg);
+        &::before {
+            border-width: 9px;
+            border-bottom-color: #000000;
+            top: -12px;
+            left: -8px;
+        }
+    }
+    &.hour{
+        height: calc(50% - 63px);
+        top: 63px;
+        width: 5px;
+        transform: translateX(-2.5px) rotate(0deg);
+        &::before {
+            border-width: 11px;
+            border-bottom-color: #000000;
+            top: -14px;
+            left: -8px;
+        }
+    }
+}
+
+.point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: #364153;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
