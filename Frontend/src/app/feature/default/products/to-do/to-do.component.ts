@@ -6,9 +6,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { map, Observable, of } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { MONTHS_NAMES, TODO_DATA } from '../../../../utils/globalConstants';
+import { MONTHS_NAMES } from '../../../../utils/globalConstants';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ToasterService } from '../../../../core/services/toaster.service';
+import { TODO_DATA } from '../../../../utils/static-data';
 interface ToDoItem {
   title: string;
   description: string;

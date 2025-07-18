@@ -10,16 +10,16 @@
         <span class="flex items-center">Expertise <mat-icon>keyboard_arrow_down</mat-icon></span>
       </a>
       <mat-menu #Expertise="matMenu">
-        <a mat-menu-item routerLink="/all" color="primary" routerLinkActive="active"
+        <a mat-menu-item routerLink="/expertise/all" color="primary" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact:true}">All</a>
-        <a mat-menu-item routerLink="/full-calendar" color="primary" routerLinkActive="active"
+        <a mat-menu-item routerLink="/expertise/full-calendar" color="primary" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact:true}">Full
           Calendar</a>
-        <a mat-menu-item [routerLink]="['/data-table']" routerLinkActive="active"
+        <a mat-menu-item [routerLink]="['/expertise/data-table']" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact:true}">Data table</a>
-        <a mat-menu-item [routerLink]="['/map']" routerLinkActive="active"
+        <a mat-menu-item [routerLink]="['/expertise/map']" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact:true}">Map</a>
-        <a mat-menu-item routerLink="/complex-form" routerLinkActive="active"
+        <a mat-menu-item routerLink="/expertise/complex-form" routerLinkActive="active"
           [routerLinkActiveOptions]="{exact: true}">Complex Form</a>
       </mat-menu>
       <a mat-button color="primary" [matMenuTriggerFor]="Products">

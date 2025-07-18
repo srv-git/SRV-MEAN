@@ -21,9 +21,9 @@
         @if (filteredTaskItems$ | async; as taskItems) {
         @for (taskItem of taskItems; track $index) {
         <div class="w-full px-2 mb-4 min-[480px]:w-1/2 xs:w-1/2 sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <mat-card class="p-3 flex flex-col justify-between h-full !rounded-md" appearance="outlined">
+            <mat-card class="p-4 flex flex-col justify-between h-full !rounded-md" appearance="outlined">
                 <div class="mb-2">
-                    <h2 class="flex justify-between items-center mb-2 font-medium"><span class="text-base line-clamp-2"
+                    <h2 class="flex justify-between items-center mb-2 font-medium"><span class="text-sm line-clamp-2"
                             title="{{taskItem.title}}">{{taskItem.title}}</span>
                         <span class="text-sm pl-2">{{taskItem.date}}</span>
                     </h2>
