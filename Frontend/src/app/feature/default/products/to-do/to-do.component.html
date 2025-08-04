@@ -39,8 +39,8 @@
                         <button mat-icon-button class="!text-red-500 opacity-50 hover:opacity-100"
                             (click)="handleDeleteTask()"><mat-icon>delete</mat-icon></button>
                     </div>
-                    <mat-checkbox [checked]="taskItem.isCompleted" name="task" id="task" labelPosition="before"
-                        class="opacity-50 hover:opacity-100">
+                    <mat-checkbox [checked]="taskItem.isCompleted" name="task + {{ $index }}" id="task + {{ $index }}"
+                        labelPosition="before" class="opacity-50 hover:opacity-100">
                         Mark as completed</mat-checkbox>
                 </div>
             </mat-card>
