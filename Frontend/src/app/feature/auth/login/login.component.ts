@@ -30,13 +30,14 @@ import { AuthService } from '../../../core/services/auth.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  disableAction: boolean = false;
   loginFormInfo!: FormGroup;
   $destroy = new Subject<void>();
   constructor(
     readonly fb: FormBuilder,
     readonly authService: AuthService,
     readonly toaster: ToasterService,
-    readonly router: Router
+    readonly router: Router,
   ) {}
 
   ngOnInit() {
@@ -52,18 +53,20 @@ export class LoginComponent {
    */
   handleLogin(): void {
     if (this.loginFormInfo.valid) {
+      this.disableAction = true;
       this.authService
         .loginUser(this.loginFormInfo.value)
         .pipe(takeUntil(this.$destroy))
         .subscribe({
           next: (res) => {
             this.toaster.showSuccess(
-              res.message ?? 'You have logged in successfully!'
+              res.message ?? 'You have logged in successfully!',
             );
             this.router.navigate(['user/' + res?.user?.id]);
           },
           error: (err) => {
             this.toaster.showError(err.error?.message ?? 'Login failed!');
+            this.disableAction = false;
           },
         });
     } else {
